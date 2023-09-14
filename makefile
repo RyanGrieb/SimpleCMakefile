@@ -15,7 +15,7 @@ all: $(EXECUTABLE)
 
 
 # gcc -Wall main.o utils/list_utils.o commands/ls_command.o commands/pwd_command.o commands/echo_command.o -o main
-# Compiles the program, and references %.o: %.c when a .o file is needed. (done by the pattern rule below)
+# Compiles the program, and references %.o: %.c when a .o file is needed. (done by the pattern rule below, and done before before gcc finishes running here)
 # $@ references $(EXECUTABLE)
 $(EXECUTABLE): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $@
