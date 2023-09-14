@@ -14,13 +14,14 @@ EXECUTABLE = main
 all: $(EXECUTABLE)
 
 
-# gcc -Wall main.o utils/list_utils.o commands/ls_command.o commands/pwd_command.o commands/echo_command.o -o main
+# gcc -Wall main.o file1.o file2.o a_folder/file_in_folder.o -o main
 # Compiles the program, and references %.o: %.c when a .o file is needed. (done by the pattern rule below, and done before before gcc finishes running here)
 # $@ references $(EXECUTABLE)
 $(EXECUTABLE): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $@
 
-# gcc -Wall -c main.c -o main.o, ect.. when needed.
+# gcc -Wall -c main.c -o main.o,
+# gcc -Wall -c file1.c -o file1.o  ect.. when needed.
 # This is a pattern rule for compiling individual .c files into .o object files.
 # Whenever a .o file is needed (e.g. from $(EXECUTABLE): $(OBJ) above), it will compile the corresponding .c file into an object file.
 # $< references %.c
