@@ -4,7 +4,7 @@ CC = gcc
 CFLAGS = -Wall
 
 # List of all C files we want to compile
-SRC = main.c file1.c file2.c
+SRC = main.c file1.c file2.c a_folder/file_in_folder.c
 # OBJ is a list of object files derived from SRC by replacing .c with .o
 OBJ = $(SRC:.c=.o)
 # Assign the value 'main' to the EXECUTABLE variable
